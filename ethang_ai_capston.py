@@ -11,10 +11,6 @@ if not os.path.exists(UPLOAD_FOLDER):
     os.makedirs(UPLOAD_FOLDER)
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
-"""@app.route('/')
-def index():
-    return render_template('index.html')"""
-
 @app.route('/', methods=['GET', 'POST'])
 def submit():
     if request.method == 'POST':
