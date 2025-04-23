@@ -2,7 +2,7 @@ from flask import Flask, render_template, url_for, request
 import os
 from groq import Groq
 
-api_key = "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"
+api_key = "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"
 app = Flask(__name__)
 
 # Configure upload folder
@@ -55,7 +55,7 @@ def submit():
                         "content": prompt
                     }
                 ],
-                model="mixtral-8x7b-32768",
+                model="llama-3.3-70b-versatile",
                 temperature=0.3,
                 max_tokens=1000
             )
