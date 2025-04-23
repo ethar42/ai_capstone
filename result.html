@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block head %}
+<title>Summary Results</title>
+{% endblock %}
+
+{% block body %}
+<div class="container">
+    <h1>Summary Results</h1>
+    <div class="summary-box">
+        {{ summary | safe }}
+    </div>
+    <div class="text-center mt-4">
+        <a href="{{ url_for('submit') }}" class="btn btn-primary">Submit Another File</a>
+    </div>
+</div>
+{% endblock %} 
