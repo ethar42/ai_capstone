@@ -11,11 +11,11 @@ if not os.path.exists(UPLOAD_FOLDER):
     os.makedirs(UPLOAD_FOLDER)
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
-@app.route('/')
+"""@app.route('/')
 def index():
-    return render_template('index.html')
+    return render_template('index.html')"""
 
-@app.route('/submit', methods=['GET', 'POST'])
+@app.route('/', methods=['GET', 'POST'])
 def submit():
     if request.method == 'POST':
         # Get the API key from the request
