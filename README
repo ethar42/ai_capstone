@@ -1,1 +1,35 @@
-This project will use Web Application, Groq API, and File Submission for use to summarize.
+This is a Flask web application that provides a text summarization service using the Groq API. Here's a breakdown of its functionality:
+
+Setup and Configuration:
+    Uses Flask for the web framework
+    Integrates with Groq's API for text summarization
+    Creates an uploads directory for temporary file storage
+    Uses a hardcoded API key for Groq authentication
+
+Main Route ('/'):
+    Handles both GET and POST requests
+    GET: Displays a submission form (submit.html)
+    POST: Processes file uploads and generates summaries
+
+File Processing Flow:
+    Validates the submitted API key
+    Accepts only .txt files
+    Temporarily saves uploaded files
+    Reads the file content
+    Sends the content to Groq's API for summarization
+    Cleans up by deleting the uploaded file after processing
+
+Groq Integration:
+    Uses the "llama-3.3-70b-versatile" model
+    Sets temperature to 0.3 for more focused outputs
+    Limits response to 1000 tokens
+    Returns the summary to a result template
+
+Security Features:
+    API key validation
+    File type restriction (.txt only)
+    Temporary file handling with cleanup
+
+The application follows a simple workflow: users upload a text file through a web interface, the content is processed by Groq's AI model to generate a summary, and the result is displayed to the user. The code includes basic error handling for cases like missing files, invalid file types, and incorrect API keys.
+
+Note: The API key is currently hardcoded in the script, which is not a secure practice. In a production environment, this should be moved to an environment variable or secure configuration management system.
